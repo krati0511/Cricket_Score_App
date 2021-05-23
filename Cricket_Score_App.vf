@@ -1,0 +1,446 @@
+{
+  "project": {
+    "_id": "6033cfcbb5e2b5001ce8f43e",
+    "name": "Cricket Score App",
+    "teamID": "PGE9QlKEY3",
+    "devVersion": "6033cfcb23ff350006283f53",
+    "platform": "google",
+    "platformData": {
+      "invocationName": "template project google"
+    },
+    "members": [],
+    "linkType": "STRAIGHT",
+    "image": "",
+    "creatorID": 56821
+  },
+  "version": {
+    "_id": "6033cfcb23ff350006283f53",
+    "name": "Initial Version",
+    "projectID": "6033cfcbb5e2b5001ce8f43e",
+    "variables": [
+      "match_list",
+      "unique_id",
+      "team1",
+      "team2",
+      "score",
+      "stat",
+      "team"
+    ],
+    "platformData": {
+      "slots": [],
+      "intents": [],
+      "settings": {
+        "restart": true,
+        "repeat": 100
+      },
+      "publishing": {
+        "voice": "",
+        "locales": [
+          "en-US",
+          "en-AU",
+          "en-CA",
+          "en-GB",
+          "en-IN",
+          "en-BE",
+          "en-SG"
+        ],
+        "displayName": "Cricket Score App",
+        "developerName": "",
+        "pronunciation": "CricketScoreApp ",
+        "invocationName": "",
+        "smallLogoImage": "",
+        "developerEmail": "",
+        "fullDescription": "",
+        "largeBannerImage": "",
+        "privacyPolicyUrl": "",
+        "shortDescription": "",
+        "termsOfServiceUrl": "",
+        "sampleInvocations": [
+          "open CricketScoreApp ",
+          "start CricketScoreApp ",
+          "launch CricketScoreApp "
+        ]
+      },
+      "status": {
+        "stage": "DEV"
+      },
+      "platform": "google"
+    },
+    "rootDiagramID": "6033cfcb23ff350006283f54",
+    "creatorID": 56821,
+    "prototype": {
+      "data": {
+        "name": "Cricket Score App",
+        "locales": [
+          "en-US",
+          "en-US",
+          "en-US",
+          "en-US",
+          "en-US",
+          "en-US",
+          "en-US"
+        ]
+      },
+      "model": {
+        "intents": [],
+        "slots": []
+      },
+      "context": {
+        "stack": [
+          {
+            "storage": {},
+            "variables": {},
+            "programID": "6033cfcb23ff350006283f54"
+          }
+        ]
+      },
+      "settings": {}
+    }
+  },
+  "diagrams": {
+    "6033cfcb23ff350006283f54": {
+      "_id": "6033cfcb23ff350006283f54",
+      "offsetX": 222.2000000000001,
+      "offsetY": -169.19999999999996,
+      "zoom": 80,
+      "nodes": {
+        "5f9f562f11b31520c2a2a6eb": {
+          "nodeID": "5f9f562f11b31520c2a2a6eb",
+          "type": "start",
+          "coords": [
+            -217.5,
+            -65
+          ],
+          "data": {
+            "name": "Start",
+            "color": "standard",
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d03a59f6e9558509c78f",
+                "id": "6033d01d59f6e9558509c789"
+              }
+            ],
+            "steps": []
+          }
+        },
+        "6033d03a59f6e9558509c78c": {
+          "nodeID": "6033d03a59f6e9558509c78c",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Hey there! I'm here to assist you with cricket scores"
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d0cb59f6e9558509c79b",
+                "id": "6033d03a59f6e9558509c78e"
+              }
+            ]
+          }
+        },
+        "6033d03a59f6e9558509c78f": {
+          "nodeID": "6033d03a59f6e9558509c78f",
+          "type": "block",
+          "coords": [
+            -134.25000000000006,
+            137.99999999999997
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d03a59f6e9558509c78c"
+            ]
+          }
+        },
+        "6033d0cb59f6e9558509c797": {
+          "nodeID": "6033d0cb59f6e9558509c797",
+          "type": "api",
+          "data": {
+            "url": "https://cricapi.com/api/matches?apikey=VDgYGkaHK3MhXlTfO4ZM4DhNwon1",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "GET",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "",
+            "mappings": [
+              {
+                "path": "response.matches",
+                "var": "match_list"
+              }
+            ],
+            "bodyType": "formData",
+            "selectedAction": "Make a GET Request",
+            "selectedIntegration": "Custom API",
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d1de59f6e9558509c7a6",
+                "id": "6033d0cb59f6e9558509c799"
+              },
+              {
+                "type": "fail",
+                "target": null,
+                "id": "6033d0cb59f6e9558509c79a"
+              }
+            ]
+          }
+        },
+        "6033d0cb59f6e9558509c79b": {
+          "nodeID": "6033d0cb59f6e9558509c79b",
+          "type": "block",
+          "coords": [
+            240.7499999999999,
+            -75.75000000000003
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d0cb59f6e9558509c797"
+            ]
+          }
+        },
+        "6033d1de59f6e9558509c7a3": {
+          "nodeID": "6033d1de59f6e9558509c7a3",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Which team do you need score for?"
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d91d59f6e9558509c826",
+                "id": "6033d1de59f6e9558509c7a5"
+              }
+            ]
+          }
+        },
+        "6033d1de59f6e9558509c7a6": {
+          "nodeID": "6033d1de59f6e9558509c7a6",
+          "type": "block",
+          "coords": [
+            648.2499999999999,
+            -109.50000000000006
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d1de59f6e9558509c7a3"
+            ]
+          }
+        },
+        "6033d44f59f6e9558509c7fc": {
+          "nodeID": "6033d44f59f6e9558509c7fc",
+          "type": "code",
+          "data": {
+            "code": "var unique_id\r\nteam = team.toLowerCase()\r\n\r\nfor(var i=0; i<match_list.length; i++) {\r\n  team1 = match_list[i][\"team-1\"].toLowerCase()\r\n  team2 = match_list[i][\"team-2\"].toLowerCase()\r\n  \r\n  if (team1 == team || team2 == team) {\r\n    unique_id = match_list[i].unique_id\r\n    break\r\n  }\r\n}",
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d4be59f6e9558509c80e",
+                "id": "6033d44f59f6e9558509c7fe"
+              },
+              {
+                "type": "fail",
+                "target": null,
+                "id": "6033d44f59f6e9558509c7ff"
+              }
+            ]
+          }
+        },
+        "6033d44f59f6e9558509c800": {
+          "nodeID": "6033d44f59f6e9558509c800",
+          "type": "block",
+          "coords": [
+            1227,
+            87.99999999999994
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d44f59f6e9558509c7fc"
+            ]
+          }
+        },
+        "6033d4be59f6e9558509c80a": {
+          "nodeID": "6033d4be59f6e9558509c80a",
+          "type": "api",
+          "data": {
+            "url": "https://cricapi.com/api/cricketScore?apikey=VDgYGkaHK3MhXlTfO4ZM4DhNwon1&unique_id={{[unique_id].unique_id}}",
+            "body": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "params": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "method": "GET",
+            "headers": [
+              {
+                "key": "",
+                "val": ""
+              }
+            ],
+            "content": "",
+            "mappings": [
+              {
+                "path": "response.team-1",
+                "var": "team1"
+              },
+              {
+                "path": "response.team-2",
+                "var": "team2"
+              },
+              {
+                "path": "response.score",
+                "var": "score"
+              },
+              {
+                "path": "response.v",
+                "var": "stat"
+              }
+            ],
+            "bodyType": "formData",
+            "selectedAction": "Make a GET Request",
+            "selectedIntegration": "Custom API",
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d7b059f6e9558509c81a",
+                "id": "6033d4be59f6e9558509c80c"
+              },
+              {
+                "type": "fail",
+                "target": null,
+                "id": "6033d4be59f6e9558509c80d"
+              }
+            ]
+          }
+        },
+        "6033d4be59f6e9558509c80e": {
+          "nodeID": "6033d4be59f6e9558509c80e",
+          "type": "block",
+          "coords": [
+            614.5,
+            182.99999999999994
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d4be59f6e9558509c80a"
+            ]
+          }
+        },
+        "6033d7b059f6e9558509c817": {
+          "nodeID": "6033d7b059f6e9558509c817",
+          "type": "speak",
+          "data": {
+            "randomize": false,
+            "dialogs": [
+              {
+                "voice": "default",
+                "content": "Here are the stats you are looking for: the match was between {{[team1].team1}} and {{[team2].team2}}. The score was {{[score].score}}."
+              }
+            ],
+            "ports": [
+              {
+                "type": "",
+                "target": null,
+                "id": "6033d7b059f6e9558509c819"
+              }
+            ]
+          }
+        },
+        "6033d7b059f6e9558509c81a": {
+          "nodeID": "6033d7b059f6e9558509c81a",
+          "type": "block",
+          "coords": [
+            575.7499999999999,
+            467.99999999999994
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d7b059f6e9558509c817"
+            ]
+          }
+        },
+        "6033d91d59f6e9558509c823": {
+          "nodeID": "6033d91d59f6e9558509c823",
+          "type": "capture",
+          "data": {
+            "slot": "Custom",
+            "variable": "team",
+            "reprompt": null,
+            "slotInputs": [],
+            "chips": null,
+            "ports": [
+              {
+                "type": "",
+                "target": "6033d44f59f6e9558509c800",
+                "id": "6033d91d59f6e9558509c825"
+              }
+            ]
+          }
+        },
+        "6033d91d59f6e9558509c826": {
+          "nodeID": "6033d91d59f6e9558509c826",
+          "type": "block",
+          "coords": [
+            1067.75,
+            -109.00000000000006
+          ],
+          "data": {
+            "name": "Block",
+            "color": "standard",
+            "steps": [
+              "6033d91d59f6e9558509c823"
+            ]
+          }
+        }
+      },
+      "variables": [],
+      "children": [],
+      "name": "ROOT",
+      "versionID": "6033cfcb23ff350006283f53",
+      "creatorID": 56821,
+      "modified": 1618984943
+    }
+  }
+}
